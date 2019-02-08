@@ -56,6 +56,20 @@ GraphicBuffer::GraphicBuffer()
     layerCount = 0;
     handle = NULL;
 }
+ 
+GraphicBuffer::GraphicBuffer(uint32_t inWidth, uint32_t inHeight,
+        PixelFormat inFormat, uint32_t inUsage)
+    : BASE(), mOwner(ownData), mBufferMapper(GraphicBufferMapper::get()),
+      mInitCheck(NO_ERROR), mId(getUniqueId()), mGenerationNumber(0)
+{
+    width  =
+    height =
+    stride =
+    format =
+    usage  = 0;
+    handle = NULL;
+    mInitCheck = initSize(inWidth, inHeight, inFormat, inUsage, "<Unknown>");
+}
 
 // deprecated
 GraphicBuffer::GraphicBuffer(uint32_t inWidth, uint32_t inHeight,

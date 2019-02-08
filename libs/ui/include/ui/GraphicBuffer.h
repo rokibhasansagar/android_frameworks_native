@@ -133,7 +133,9 @@ public:
             uint32_t inLayerCount, uint32_t inUsage, uint32_t inStride,
             native_handle_t* inHandle, bool keepOwnership);
     GraphicBuffer(uint32_t inWidth, uint32_t inHeight, PixelFormat inFormat,
-            uint32_t inUsage, std::string requestorName = "<Unknown>");
+            uint32_t inUsage);
+    GraphicBuffer(uint32_t inWidth, uint32_t inHeight, PixelFormat inFormat,
+            uint32_t inUsage, std::string requestorName);
 
     // return status
     status_t initCheck() const;
